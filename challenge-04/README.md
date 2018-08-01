@@ -32,6 +32,7 @@ isTruthy(2 === 2);
 isTruthy('a' !== 'b');
 isTruthy(1 < 2);
 isTruthy(null !== false);
+isTruthy(function() {});
 
 /*
 Declare uma variável chamada `carro`, atribuindo à ela um objeto com as
