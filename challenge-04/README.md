@@ -91,7 +91,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 var obterMarcaModelo = function() {
-  return 'Esse carro é um ' + obterMarca() + ' ' + obterModelo();
+  return 'Esse carro é um ' + carro.obterMarca() + ' ' + carro.obterModelo();
 };
 
 /*
@@ -112,13 +112,14 @@ citado acima, no lugar de "pessoas".
 */
 carro.entreNoCarro = function( numeroDePessoas ) {
   var totalPessoas = carro.quantidadePessoas + numeroDePessoas;
+  var quantasPessoas = carro.assentos - carro.quantidadePessoas;
+  var pessoa = quantasPessoas === 1 ? pessoa = 'pessoa' : pessoa = 'pessoas';
+    
   if ( carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
     return 'O carro já está lotado!';
   }
 
-  if ( totalPessoas > carro.assentos ) {
-    var quantasPessoas = carro.assentos - carro.quantidadePessoas;
-    var pessoa = quantasPessoas === 1 ? pessoa = 'pessoa' : pessoa = 'pessoas'; 
+  if ( totalPessoas > carro.assentos ) { 
     return 'Só cabem mais ' + quantasPessoas + ' ' + pessoa + '!';
   }
   carro.quantidadePessoas += numeroDePessoas;
