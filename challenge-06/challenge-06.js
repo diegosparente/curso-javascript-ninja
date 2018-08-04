@@ -4,11 +4,9 @@ para começar o desafio.
 Declare uma variável chamada `championship` que receberá o nome do campeonato,
 e imprima o nome desse campeonato no console.
 */
-var championship = function(nomeDoCampeonato) {
-  return nomeDoCampeonato;
-};
+var championship = 'Campeonato Carioca';
 
-console.log( championship( 'Campeonato Carioca' ) );
+console.log( championship );
 
 /*
 Declare uma variável chamada `teams`, que receberá um array com 5 elementos.
@@ -16,7 +14,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams = [ 'Vasco da Gama', 'Flamengo', 'Cabofriense', 'Bangu', 'Volta Redonda', 'Nova Iguaçu' ]
+var teams = [ 'Flamengo', 'Vasco da Gama', 'Cabofriense', 'Bangu', 'Volta Redonda', 'Nova Iguaçu' ]
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -37,26 +35,12 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 var showTeamPosition = function( valor ) {
-  var posicao = valor;
-  switch( valor -= 1 ) {
-    case 0:
-      console.log( 'O time que esta em ' + posicao + 'º lugar é o ' + teams[ valor ] );
-      break;
-    case 1:
-      console.log( 'O time que esta em ' + posicao + 'º lugar é o ' + teams[ valor ] );
-      break;
-    case 2:
-      console.log( 'O time que esta em ' + posicao + 'º lugar é o ' + teams[ valor ] );
-      break;
-    case 3:
-      console.log( 'O time que esta em ' + posicao + 'º lugar é o ' + teams[ valor ] );
-      break;
-    case 4:
-      console.log( 'O time que esta em ' + posicao + 'º lugar é o ' + teams[ valor ] );
-      break;
-    default:
-      console.log( 'Não temos a informação do time que está na nessa posição.' );
+
+  if ( valor < 1 || valor > 5 ) {
+    console.log( 'Não temos a informação do time que está na nessa posição.' );
   };
+
+  console.log( 'O time que esta em ' + valor + 'º lugar é o ' + teams[ valor - 1 ] );
 };
 
 /*
@@ -94,31 +78,27 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 var convertToHex = function( cor ) {
+  var hexadecimal
   switch ( cor ) {
     case 'red':
-      var hexadecimal = '#FF0000';
-      console.log('O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.');
+      hexadecimal = '#FF0000';
       break;
     case 'blue':
-      var hexadecimal = '#0000FF';
-      console.log('O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.');
+      hexadecimal = '#0000FF';
       break;
     case 'yellow':
-      var hexadecimal = '#FFFF00';
-      console.log('O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.');
+      hexadecimal = '#FFFF00';
       break;
     case 'silver':
-      var hexadecimal = '#C0C0C0';
-      console.log('O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.');
+      hexadecimal = '#C0C0C0';
       break;
     case 'black':
-      var hexadecimal = '#000000';
-      console.log('O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.');
+      hexadecimal = '#000000';
       break;
     default:
-      console.log(' Não temos o equivalente hexadecimal para ' + cor + '. ');
-      break;
+      return ' Não temos o equivalente hexadecimal para ' + cor + '. ';
   }
+  return 'O hexadecimal para a cor ' + cor + ' é ' + hexadecimal + '.';
 };
 
 /*
