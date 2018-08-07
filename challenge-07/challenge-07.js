@@ -16,14 +16,14 @@ var addItem = function( novoValor ) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-console.log( addItem( [ 'a', 'e', 'i', 'o', 'u' ] ) );
+console.log( addItem( [ 'a', 1986, true ] ) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
 frase:
 "O segundo elemento do segundo array é [ELEMENTO]."
 */
-console.log( 'O segundo elemento do segundo array é ' + myArray[5][1] );
+console.log( 'O segundo elemento do segundo array é ' + myArray[5][1] + '.' );
 
 /*
 Mostre no console quantos itens tem o primeiro array criado, com a frase:
@@ -35,7 +35,7 @@ console.log( 'O primeiro array tem '+ myArray.length +' itens.' );
 Agora mostre no console quantos itens tem o segundo array criado, com a frase:
 "O segundo array tem [QUANTIDADE DE ITENS] itens."
 */
-console.log( 'O segundo array tem '+ myArray[5] +' itens.' );
+console.log( 'O segundo array tem '+ myArray[5].length +' itens.' );
 
 /*
 Utilizando a estrutura de repetição `while`, mostre no console todos os números
@@ -44,7 +44,7 @@ pares entre 10 e 20, inclusive esses 2.
 console.log( 'Números pares entre 10 e 20:' );
 var cont = 10;
 while( cont <= 20 ) {
-  console.log( cont % 2 === 0 ? cont : '' );
+  cont % 2 === 0 ? console.log( cont ) : '';
   cont++;
 };
 
@@ -54,7 +54,7 @@ Na mesma ideia do exercício acima: mostre agora os números ímpares.
 console.log( 'Números ímpares entre 10 e 20:' );
 var cont = 10;
 while( cont <= 20 ) {
-  console.log( cont % 2 !== 0 ? cont : '' );
+  cont % 2 !== 0 ? console.log( cont ) : '';
   cont++;
 };
 
@@ -66,10 +66,10 @@ Só vamos mudar o range:
 */
 console.log( 'Números pares entre 100 e 120:' );
 for( var cont = 100; cont <= 120; cont++ ) {
- console.log( cont );
+ cont % 2 === 0 ? console.log( cont ) : '';
 };
 
 console.log( 'Números ímpares entre 111 e 125:' );
 for( var cont = 111; cont <= 125; cont++ ) {
-  console.log( cont % 2 !== 0 ? cont : '' );
+  cont % 2 !== 0 ? console.log( cont ) : '';
 };
