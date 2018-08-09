@@ -27,21 +27,21 @@ console.log( ' O Nome da função que faz a soma é ' + sum.name + '.' );
 Crie uma função literal chamada `showName`. Essa função deve retornar o
 seu nome.
 */
-function showName( nome ) {
-  return nome;
+function showName() {
+  return 'Diego Parente';
 }
 
 /*
 Declare uma variável chamada `varShowName` que recebe a função criada acima.
 */
-var varShowName = showName( 'Diego' );
+var varShowName = showName;
 
 /*
 Usando a variável criada acima, mostre no console o nome e o retorno da função
 atribuída a ela, com a seguinte frase:
 "A função [NOME DA FUNÇÃO] retorna [RETORNO DA FUNÇÃO]."
 */
-console.log( ' A função ' + showName.name + ' retorna ' + varShowName + '.' );
+console.log( ' A função ' + varShowName.name + ' retorna ' + varShowName() + '.' );
 
 /*
 Crie uma função literal chamada `calculator`, que funcione assim:
@@ -77,37 +77,37 @@ function calculator( operador ) {
         break;
       default:
         return ' Operação inválida. '
-    };
+    }
     return ' O retorno da operação: ' + numero1 + '' + operador + '' + numero2 + ' = ' + resultado;
   };
-};
+}
 
 /*
 Declare uma variável chamada `sum`, que receberá a função acima, passando como
 parâmetro o operador de soma.
 */
-var sum = calculator( ' + ' )( 1, 2 );
+var sum = calculator( ' + ' );
 
 /*
 Agora `sum` é uma função. Mostre no console a soma de dois números, usando ela.
 */
-console.log( sum );
+console.log( sum( 1, 2 ) );
 
 /*
 Agora, declare algumas variáveis com os nomes `subtraction`, `multiplication`,
 `division` e `mod`, e atribua a elas a função `calculator`, passando o operador
 correto por parâmetro para cada uma delas.
 */
-var subtraction = calculator( ' - ' )( 2, 1 );
-var multiplication = calculator( ' * ' )( 3, 3 );
-var division = calculator( ' / ' )( 4, 2 );
-var mod = calculator( ' % ' )( 3, 2 );
+var subtraction = calculator( ' - ' );
+var multiplication = calculator( ' * ' );
+var division = calculator( ' / ' );
+var mod = calculator( ' % ' );
 
 /*
 Faça uma operação com cada uma das funções criadas acima, mostrando o resultado
 no console.
 */
-console.log( subtraction );
-console.log( multiplication );
-console.log( division );
-console.log( mod );
+console.log( subtraction( 2, 1 ) );
+console.log( multiplication( 3, 3 ) );
+console.log( division( 4, 2 ) );
+console.log( mod( 3, 2 ) );
