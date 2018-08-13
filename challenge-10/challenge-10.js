@@ -13,7 +13,7 @@ e faça a indentação correta.
   var five = Number( '5' );
   console.log( five + ' é número?', typeof five === 'number' );
 
-  var concat = String( 10 + 10 );
+  var concat = 10 + String( 10 );
   console.log( '"' + concat + '" é uma string? E é igual a "1010"?', typeof concat === 'string' );
 
   /*
@@ -26,19 +26,19 @@ e faça a indentação correta.
   propriedade, usando os valores passados por parâmetro.
   */
   var operation = {
-    '+': function( numero1, numero2 ) {
+    '+' : function( numero1, numero2 ) {
       return number1 + number2;
     },
-    '-': function( number1, number2 ) {
+    '-' : function( number1, number2 ) {
       return number1 - number2;
     },
-    '*': function( number1, number2 ) {
+    '*' : function( number1, number2 ) {
       return number1 * number2;
     },
-    '/': function( number1, number2 ) {
+    '/' : function( number1, number2 ) {
       return number1 / number2;
     },
-    '%': function( number1, number2 ) {
+    '%' : function( number1, number2 ) {
       return number1 % number2;
     }
   };
@@ -54,7 +54,7 @@ e faça a indentação correta.
   - O desafio é fazer o retorno sem usar "if" ou "switch".
   */
   function isOperatorValid( operator ) {
-    return ( operator === '+' || operator === '-' || operator === '*' || operator === '/' || operator === '%' )
+    return !!operation[ operator ];
   }
 
   /*
@@ -80,7 +80,6 @@ e faça a indentação correta.
       return operation[ operator ]( number1, number2 );
     };
   }
-
 
   /*
   Crie uma função chamada "showOperationMessage" que recebe três parâmetros:
@@ -207,4 +206,4 @@ e faça a indentação correta.
     console.log( showErrorMessage( operationSignal ) );
   }
 
-})();
+} )();
