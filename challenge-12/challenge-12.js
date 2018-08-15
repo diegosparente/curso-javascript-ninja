@@ -82,8 +82,8 @@
     "[PROPRIEDADE]: [VALOR]"
   */
   for ( var index = 0; index < books.length; index++ ) {
-    for ( var prop in books[i] ) {
-      console.log( prop + ': ' + books[i][prop] );
+    for ( var prop in books[index] ) {
+      console.log( prop + ': ' + books[index][prop] );
     }
   }
 
