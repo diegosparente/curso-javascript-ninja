@@ -17,7 +17,6 @@
     'age' : 32,
   };
   console.log( 'Propriedades de "person":' );
-  console.log( person );
 
   /*
   Mostre no console, em um array, todas as propriedades do objeto acima.
@@ -28,7 +27,7 @@
   /*
   Crie um array vazio chamado `books`.
   */
-  var books = [ ];
+  var books = [];
 
   /*
   Adicione nesse array 3 objetos, que serão 3 livros. Cada livro deve ter a
@@ -36,20 +35,9 @@
   `name`: String
   `pages`: Number
   */
-  books.push( 
-    {
-      'name' : 'livro1',
-      'page' : 200
-    }, 
-    {
-      'name' : 'livro2',
-      'page' : 100
-    }, 
-    {
-      'name' : 'livro3',
-      'page' : 50
-    }
-  )
+  books.push( { 'name' : 'Learning JavaScript', 'page': 900 } );
+  books.push( { 'name' : 'CSS3', 'page': 200 } );
+  books.push( { 'name' : 'HTML5', 'page': 750 } );
   console.log( '\nLista de livros:' );
 
   /*
@@ -94,7 +82,9 @@
     "[PROPRIEDADE]: [VALOR]"
   */
   for ( var index = 0; index < books.length; index++ ) {
-    console.log( books[ index ].name + ' : ' + books[ index ].page);
+    for ( var prop in books[i] ) {
+      console.log( prop + ': ' + books[i][prop] );
+    }
   }
 
   /*
@@ -102,21 +92,21 @@
   seu nome. Adicione seu nome completo no array.
   */
   var fullName = 'Diego Parente'
-  var myName = fullName.split('');
+  var myName = [ 'D', 'i', 'e', 'g', 'o' ];
   console.log( '\nMeu nome é:' );
   console.log( myName );
 
   /*
   Juntando todos os itens do array, mostre no console seu nome.
   */
-  console.log( myName.join('') );
+  console.log( myName.join( '' ) );
 
   console.log( '\nMeu nome invertido é:' );
 
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  console.log( myName.reverse() );
+  console.log( myName.reverse().join( '' ) );
 
   console.log( '\nAgora em ordem alfabética:' );
   /*
