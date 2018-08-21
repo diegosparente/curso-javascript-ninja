@@ -78,7 +78,7 @@
   */
   console.log( '\nSeu nome na língua do "P":' );
   var name = [ 'Di', 'e', 'go' ];
-  
+
   var p = name.reduce( function(accumulator, currentValue){
     return accumulator + 'P' + currentValue;
   }, '' );
@@ -110,16 +110,12 @@
   Consegue prever o resultado? Deixe uma mensagem no console tentando explicar
   o que acontece ;)
   */
-  console.log( '\nExiste um { number: 2 } em numberObjects?' );
-  var prevision = numberObjects.some( function(item){
-    return 2 === item.number;
-  } );
-
-  console.log(
-    prevision
-    ? 'Existe um objeto { number: 2 } em numberObjects!'
-    : 'Não existe um objeto { number: 2 } em numberObjects :('
-  );
+ console.log( '\nE buscando a partir do último índice, o { number: 2 } existe?' );
+ if ( numberObjects.indexOf({ number: 2 }) > -1 ) {
+   console.log( 'Existe um objeto { number: 2 } em numberObjects!' );
+ } else {
+   console.log( 'Não existe um objeto { number: 2 } em numberObjects :(' );
+ }
   /*
   Fazendo o mesmo do exercício acima, mas começando a buscar do último índice,
   será que obtemos um resultado diferente? Faça a busca a partir do índice 2.
