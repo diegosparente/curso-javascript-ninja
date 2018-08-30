@@ -26,7 +26,7 @@
   no console:
   */
   console.log( 'Regex para números usando o construtor:' );
-  var justNumbersRegex = new RegExp('^\\d+', 'gm');
+  var justNumbersRegex = /^\d+/gm;
 
   /*
   Verifique se a regex acima casa com o texto na variável `text`, mostrando o
@@ -36,7 +36,7 @@
   var text = '10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.';
   console.log( '\nNúmeros no início da linha do texto:\n' + text, '\n' );
   console.log( text.match(justNumbersRegex) );
-
+  console.log( justNumbersRegex );
   /*
   - Crie uma regex que case com números no final de uma string. Atribua a
   regex à uma variável chamada `numbersAtTheEnd`.
@@ -46,7 +46,7 @@
   Mostre a regex no console:
   */
   console.log( '\nRegex para números somente no final das linhas:' );
-  var numbersAtTheEnd = new RegExp('\\d+$','gm')
+  var numbersAtTheEnd = /\d+$/gm;
   console.log( numbersAtTheEnd );
   /*
   Verifique se a regex acima casa com o texto na variável `otherText`,
@@ -85,7 +85,8 @@
   console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
 
   function hasClass(markup, cssClass){
-    return new RegExp( cssClass, 'g').test( markup ) + ' para a classe ' +  cssClass;
+    return new RegExp('class=["\'](?:[\\w\\s]+)?' + cssClass + '(?:[\\w\\s]+)?["\']', 'g')
+    .test( markup ) + ' para a classe ' +  cssClass;
   }
 
   var classes = [ 'container', 'text' , 'date', 'excerpt', 'main' ];
