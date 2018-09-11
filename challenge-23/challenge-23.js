@@ -29,7 +29,6 @@
   var $buttonCE = doc.querySelector('[data-js="button-ce"]');
   var $buttonsOperations = doc.querySelectorAll('[data-js="buttons-operations"]');
   var $buttonEqual = doc.querySelector('[data-js="button-equal"]');
-  var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
 
   // console.table( $buttonNumbers );
 
@@ -85,6 +84,7 @@
       var firstValue = accumulated.slice(0,-1);
       var operator = accumulated.split('').pop();
       var lastValue = removeLastItemIfItIsAnOperator(actual);
+      var lastOperator = isLastItemAnOperation(actual) ? actual.split('').pop() : '';
       switch(operator) {
         case '+':
           return (+firstValue + +lastValue) + lastOperator;
